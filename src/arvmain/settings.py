@@ -26,6 +26,7 @@ SECRET_KEY = config('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DJANGO_DEBUG', cast=bool)
 print("DEBUG: ", DEBUG, type(DEBUG))
+print("ON_RAILWAY: ", ON_RAILWAY, type(ON_RAILWAY))
 
 ALLOWED_HOSTS = []
 
