@@ -1,0 +1,5 @@
+<div>
+  {% if request.user.is_authenticated %} Welcome user {{ request.user }}
+  <!-- prettier-ignore -->
+  {% else %} You are not logged in {% endif %}
+</div>

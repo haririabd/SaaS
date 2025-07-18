@@ -1,0 +1,13 @@
+{
+    "build": {
+        "builder": "DOCKERFILE",
+        "dockerfilePath": "./Dockerfile",
+        "watchPatterns": [
+            "requirements.txt",
+            "requirements_railway.txt",
+            "src/**",
+            "railway.json",
+            "Dockerfile"
+        ]
+    }
+}
