@@ -36,13 +36,12 @@ WORKDIR /code
 
 # Copy the requirements file into the container
 COPY requirements.txt /tmp/requirements.txt
-COPY requirements.txt /tmp/requirements_railway.txt
 
 # copy the project code into the container's working directory
 COPY ./src /code
 
 # Install the Python project requirements
-RUN pip install -r /tmp/requirements_railway.txt
+RUN pip install -r /tmp/requirements.txt
 
 ARG DJANGO_SECRET_KEY
 ENV DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
