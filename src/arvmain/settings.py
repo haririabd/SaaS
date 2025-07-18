@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from decouple import config
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -84,29 +85,28 @@ WSGI_APPLICATION = 'arvmain.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASE_URL = config('DATABASE_URL', cast=str, default=None)
+raw_db_url = config('DATABASE_URL', default='').strip()
 
-if DATABASE_URL is None:
+if raw_db_url:
+    try:
+        DATABASES = {
+            'default': dj_database_url.parse(raw_db_url, conn_max_age=600),
+        }
+    except dj_database_url.UnknownSchemeError:
+        # Fallback to SQLite if malformed DATABASE_URL
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': BASE_DIR / 'db.sqlite3',
+            }
+        }
+else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': config('PGDATABASE'),
-            'USER': config('PGUSER'),
-            'PASSWORD': config('PGPASSWORD'),
-            'HOST': config('PGHOST'),
-            'PORT': config('PGPORT'),
-        }
-    }
-
-print("DATABASE_URL: ", DATABASE_URL, type(DATABASE_URL))
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
