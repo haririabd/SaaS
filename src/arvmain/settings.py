@@ -17,6 +17,7 @@ import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 ON_RAILWAY = config('ON_RAILWAY', default=False, cast=bool)
+ON_CODESPACE = config('ON_CODESPACE', default=False, cast=bool)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -26,8 +27,6 @@ SECRET_KEY = config('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DJANGO_DEBUG', cast=bool)
-print("DEBUG: ", DEBUG, type(DEBUG))
-print("ON_RAILWAY: ", ON_RAILWAY, type(ON_RAILWAY))
 
 ALLOWED_HOSTS = []
 
@@ -62,6 +61,21 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CSRF_TRUSTED_ORIGINS = []
+
+#check if using codespace
+if ON_CODESPACE:
+    codespace_name = config("CODESPACE_NAME")
+    codespace_domain = config("GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN")
+    CSRF_TRUSTED_ORIGINS = [f'https://{codespace_name}-8000.{codespace_domain}', 'https://localhost:8000']
+    INSTALLED_APPS += [
+        'django_browser_reload',
+    ]
+    MIDDLEWARE += [
+        'django_browser_reload.middleware.BrowserReloadMiddleware',
+    ]
+    X_FRAME_OPTIONS = 'ALLOW-FROM preview.app.github.dev'
+    
 ROOT_URLCONF = 'arvmain.urls'
 
 TEMPLATES = [
@@ -131,6 +145,11 @@ if ON_RAILWAY:
         'https://*.railway.app',
         'http://*.railway.app',
         ]
+
+# print("DEBUG: ", DEBUG, type(DEBUG))
+# print("ON_RAILWAY: ", ON_RAILWAY, type(ON_RAILWAY))
+# print("ON_CODESPACE: ", ON_CODESPACE, type(ON_CODESPACE))
+# print("CSRF_TRUSTED_ORIGINS: ", CSRF_TRUSTED_ORIGINS)
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/

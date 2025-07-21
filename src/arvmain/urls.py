@@ -15,8 +15,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.conf import settings
 from . import views
+
+ON_CODESPACE = settings.ON_CODESPACE
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,3 +27,8 @@ urlpatterns = [
     path('', views.index_view, name='index'),
     path('about/', views.about_view, name='about'),
 ]
+
+if ON_CODESPACE:
+    urlpatterns += [
+        path('__reload__/', include("django_browser_reload.urls")),
+    ]

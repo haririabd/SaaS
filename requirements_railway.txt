@@ -1,4 +1,3 @@
 -r requirements.txt
 gunicorn
 psycopg[binary]
-dj_database_url
