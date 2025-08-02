@@ -51,7 +51,7 @@ ENV DJANGO_DEBUG=${DJANGO_DEBUG}
 # database isn't available during build
 # run only commands that do not need the database. can remove when we use s3
 RUN python manage.py vendor_pull
-# RUN python manage.py collectstatic --noinput
+RUN python manage.py collectstatic --noinput
 
 # set the Django default project name
 ARG PROJ_NAME="arvmain"
