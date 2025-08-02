@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    {% include 'base/css.html' %}
+    <title>{% block page_title %}SaaS{% endblock page_title %}</title>
+  </head>
+  <body>
+    {% include 'base/navbar.html' %}
+    <h1>Welcome!</h1>
+    {% block visitor %}{% endblock visitor %}
+    <!-- prettier-ignore -->
+    {% block content %}{% endblock content %}
+
+    {% include 'base/bottomjs.html' %}
+  </body>
+</html>

@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% load static %}
+
+<!-- prettier-ignore -->
+{% block page_title %}{{ page_title }} - {{ block.super }}{% endblock page_title %}
+
+<!-- prettier-ignore -->
+{% block visitor %}
+<p>{% include 'snippets/user-msg.html' %}</p>
+{% endblock visitor %} {% block content %}
+<p>Welcome to page {{ page_title }}</p>
+{% endblock content %}
