@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from decouple import config
 from pathlib import Path
 import dj_database_url
+from django.core.mail import EmailMessage
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,10 +27,12 @@ EMAIL_PORT=config('EMAIL_PORT', cast=str, default='587') # Use 465 if use SSL
 EMAIL_USE_TLS=config('EMAIL_USE_TLS', cast=bool, default=True)
 EMAIL_HOST_USER=config('EMAIL_HOST_USER', cast=str, default=None)
 EMAIL_HOST_PASSWORD=config('EMAIL_HOST_PASSWORD', cast=str, default=None)
+DEFAULT_FROM_EMAIL=config('DEFAULT_FROM_EMAIL', default=None)
+SERVER_EMAIL=config('DEFAULT_FROM_EMAIL', default=None)
 
 # Later change this to get from user input
 ADMIN_USER_NAME=config('ADMIN_USER_NAME', default='Admin')
-ADMIN_USER_EMAIL=config('ADMIN_USER_EMAIL', default=None)
+ADMIN_USER_EMAIL=config('ADMIN_USER_EMAIL', default='hariri.bin.abdullah@gmail.com')
 
 ADMINS=[]
 MANAGERS=[]
