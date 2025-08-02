@@ -9,12 +9,16 @@
     <title>{% block page_title %}SaaS{% endblock page_title %}</title>
   </head>
   <body>
-    {% include 'base/navbar.html' %}
-    <h1>Welcome!</h1>
-    {% block visitor %}{% endblock visitor %}
-    <!-- prettier-ignore -->
-    {% block content %}{% endblock content %}
-
+    {% include 'nav/navbar.html' %}
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          {% block visitor %}{% endblock visitor %}
+          <!-- prettier-ignore -->
+          {% block content %}{% endblock content %}
+        </div>
+      </div>
+    </div>
     {% include 'base/bottomjs.html' %}
   </body>
 </html>

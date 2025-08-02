@@ -1,5 +1,5 @@
 # ignore vendor static files
-src\staticfiles\vendors
+vendors/
 
 # ignore local static files root
 local-cdn/
