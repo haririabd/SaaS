@@ -23,7 +23,9 @@ ON_CODESPACE = settings.ON_CODESPACE
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # below is application path
+    # Allauth path
+    path('accounts/', include('allauth.urls')),
+    # Application path
     path('', views.index_view, name='index'),
     path('about/', views.about_view, name='about'),
 ]
