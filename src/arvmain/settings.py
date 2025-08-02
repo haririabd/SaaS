@@ -187,6 +187,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = BASE_DIR / 'local-cdn'
 
 #  Whitenoise forever-cacheable files and compression support
+#  To prevent error 500, implement whitenoise storage first before deploy to railway, or makesure do not collectstatic before adding storage backend for whitenoise
 STORAGES = {
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
