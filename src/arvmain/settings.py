@@ -174,6 +174,8 @@ AUTH_PASSWORD_VALIDATORS = [
 #  django Allauth Config
 LOGIN_REDIRECT_URL = '/'
 ACCOUNT_SIGNUP_FIELDS = ['username', 'email*', 'password1*', 'password2*']
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_SUBJECT_PREFIX = '[SaaS] '
 ACCOUNT_LOGIN_METHODS = {
     'email',
     'username',
