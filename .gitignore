@@ -4,6 +4,9 @@ vendors/
 # ignore local static files root
 local-cdn/
 
+# ignore tailwind CLI binary file
+*/.django_tailwind_cli/
+
 .DS_Store
 
 # Django #

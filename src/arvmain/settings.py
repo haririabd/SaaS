@@ -75,6 +75,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'commando',
     # Third party app
+    'django_tailwind_cli',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -237,6 +238,9 @@ STATICFILES_DIRS = [
 # output for python manage.py collectstatic
 # local cdn --> prod cdn
 STATIC_ROOT = BASE_DIR / 'local-cdn'
+
+# Custom CSS src paths for Tailwind
+TAILWIND_CLI_SRC_CSS = STATICFILES_BASE_DIR / 'tailwind-src'
 
 #  Whitenoise forever-cacheable files and compression support
 #  To prevent error 500, implement whitenoise storage first before deploy to railway, or makesure do not collectstatic before adding storage backend for whitenoise
