@@ -4,3 +4,4 @@ dj_database_url
 requests
 whitenoise
 django-allauth[socialaccount]
+django-tailwind-cli

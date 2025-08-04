@@ -48,3 +48,9 @@ Follow these steps to get the project up and running on your local machine.
 - pip (Python package installer)
 
 - Git
+
+## Installation Step
+
+- python manage.py tailwind setup (recommended for first-time users)
+
+- python manage.py tailwind runserver (Start development server with hot reload)

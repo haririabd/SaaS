@@ -75,6 +75,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'commando',
     # Third party app
+    'django_tailwind_cli',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
