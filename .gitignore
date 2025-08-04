@@ -5,7 +5,7 @@ vendors/
 local-cdn/
 
 # ignore tailwind CLI binary file
-*/.django_tailwind_cli/
+*/.django_tailwind_cli/tailwindcss-linux*
 
 .DS_Store
 
