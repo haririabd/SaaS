@@ -172,6 +172,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Enable DaisyUI
+TAILWIND_CLI_USE_DAISY_UI = True
+
 #  django Allauth Config
 LOGIN_REDIRECT_URL = '/'
 ACCOUNT_SIGNUP_FIELDS = ['username', 'email*', 'password1*', 'password2*']
