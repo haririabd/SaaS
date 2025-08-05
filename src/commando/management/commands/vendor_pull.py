@@ -6,9 +6,7 @@ from django.core.management.base import BaseCommand
 
 STATICFILES_VENDOR_DIR = getattr(settings, 'STATICFILES_VENDOR_DIR')
 
-VENDOR_STATICFILES = {
-    "navbar-top-fixed.css": "https://www.dropbox.com/scl/fi/qcaeurctmzhwoih4ek7mk/navbar-top-fixed.css?rlkey=bhbt507vf9mz8hzx9dums46d2&st=ufkpnqn0&dl=1",
-}
+VENDOR_STATICFILES = {}
 
 class Command(BaseCommand):
 
