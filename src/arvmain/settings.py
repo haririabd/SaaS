@@ -172,6 +172,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Enable DaisyUI
+TAILWIND_CLI_USE_DAISY_UI = True
+
 #  django Allauth Config
 LOGIN_REDIRECT_URL = '/'
 ACCOUNT_SIGNUP_FIELDS = ['username', 'email*', 'password1*', 'password2*']
@@ -181,6 +184,11 @@ ACCOUNT_LOGIN_METHODS = {
     'email',
     'username',
 }
+
+# Tailwind Optimized for production
+# TAILWIND_CLI_VERSION = "4.3.0"  # Pin version
+TAILWIND_CLI_AUTOMATIC_DOWNLOAD = False  # Use pre-installed CLI
+TAILWIND_CLI_DIST_CSS = "css/tailwind.min.css"
 
 AUTHENTICATION_BACKENDS = [
     # ...
