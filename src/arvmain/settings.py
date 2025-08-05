@@ -185,6 +185,11 @@ ACCOUNT_LOGIN_METHODS = {
     'username',
 }
 
+# Tailwind Optimized for production
+# TAILWIND_CLI_VERSION = "4.3.0"  # Pin version
+TAILWIND_CLI_AUTOMATIC_DOWNLOAD = False  # Use pre-installed CLI
+TAILWIND_CLI_DIST_CSS = "css/tailwind.min.css"
+
 AUTHENTICATION_BACKENDS = [
     # ...
     # Needed to login by username in Django admin, regardless of `allauth`
