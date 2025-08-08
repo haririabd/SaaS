@@ -1,7 +1,7 @@
-{% extends "base.html" %}
+{% extends "account/base.html" %}
 {% load allauth i18n %}
 {% block head_title %}
-    {% trans "Sign Out" %}
+    {% trans "Sign Out" %} - {{ block.super }}
 {% endblock head_title %}
 {% block content %}
     {% element h1 %}
