@@ -51,6 +51,8 @@ Follow these steps to get the project up and running on your local machine.
 
 ## Installation Step
 
-- python manage.py tailwind setup (recommended for first-time users)
+- python manage.py tailwind setup (recommended for first-time setup)
+
+- If need to use login, first need to run: python manage.py migrate
 
 - python manage.py tailwind runserver (Start development server with hot reload)
