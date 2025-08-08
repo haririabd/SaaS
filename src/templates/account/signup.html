@@ -1,7 +1,7 @@
-{% extends "base.html" %}
+{% extends "allauth/layouts/base.html" %}
 {% load allauth i18n %}
 {% block head_title %}
-    {% trans "Signup" %}
+    {% trans "Signup" %} - {{ block.super }}
 {% endblock head_title %}
 {% block content %}
     {% element h1 %}
