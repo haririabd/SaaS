@@ -5,6 +5,3 @@ requests
 whitenoise
 django-allauth[socialaccount]
 django-tailwind-cli
-django-allauth-ui
-django-widget-tweaks
-slippers

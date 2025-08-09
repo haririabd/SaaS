@@ -75,13 +75,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'commando',
     # Third party app
-    'allauth_ui',
     'django_tailwind_cli',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'widget_tweaks',
-    'slippers',
 ]
 
 MIDDLEWARE = [
@@ -177,7 +174,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Enable DaisyUI
 TAILWIND_CLI_USE_DAISY_UI = True
-ALLAUTH_UI_THEME = 'dim'
 
 #  django Allauth Config
 LOGIN_REDIRECT_URL = '/'
