@@ -985,6 +985,9 @@
   .mt-25 {
     margin-top: calc(var(--spacing) * 25);
   }
+  .mt-45 {
+    margin-top: calc(var(--spacing) * 45);
+  }
   .mr-2 {
     margin-right: calc(var(--spacing) * 2);
   }
