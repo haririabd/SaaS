@@ -1,0 +1,8 @@
+{% extends 'base.html' %}{% load static %}
+{% block head_title %}{{ page_title }} - {{ block.super }}{% endblock head_title %}
+
+{% block content %}
+<h1>You are logged in!</h1>
+<p>Username : {{ owner }}</p>
+<p>Last logged in: {{ owner.last_login }}</p>
+{% endblock content %}

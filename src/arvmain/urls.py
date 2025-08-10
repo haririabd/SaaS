@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+from profiles.views import profile_detail_view
 from . import views
 
 ON_CODESPACE = settings.ON_CODESPACE
@@ -28,6 +29,7 @@ urlpatterns = [
     # Application path
     path('', views.index_view, name='index'),
     path('about/', views.about_view, name='about'),
+    path('profile/', profile_detail_view, name='profile'),
 ]
 
 if ON_CODESPACE:
