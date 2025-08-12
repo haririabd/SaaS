@@ -1,0 +1,8 @@
+<div id="contact-form-confirm">
+  <p>Your message was sent! Thanks!</p>
+  <button hx-get="{% url 'contact_form' %}"
+          hx-target="#contact-form-confirm"
+          hx-swap="outerHTML">
+    Send Another
+  </button>
+</div>
