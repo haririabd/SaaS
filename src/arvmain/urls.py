@@ -30,6 +30,8 @@ urlpatterns = [
     path('', views.index_view, name='index'),
     path('about/', views.about_view, name='about'),
     path('profile/', profile_detail_view, name='profile'),
+    # Test App for function testing
+    path('test/', include('testapp.urls')),
 ]
 
 if ON_CODESPACE:

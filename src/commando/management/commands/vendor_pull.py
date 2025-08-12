@@ -6,7 +6,10 @@ from django.core.management.base import BaseCommand
 
 STATICFILES_VENDOR_DIR = getattr(settings, 'STATICFILES_VENDOR_DIR')
 
-VENDOR_STATICFILES = {}
+VENDOR_STATICFILES = {
+    "htmx.min.js": "https://cdn.jsdelivr.net/npm/htmx.org@2.0.6/dist/htmx.min.js",
+    "theme-change-2.4.0.js": "https://cdn.jsdelivr.net/npm/theme-change@2.4.0/index.js",
+}
 
 class Command(BaseCommand):
 
