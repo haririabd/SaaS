@@ -1,0 +1,9 @@
+<!-- prettier-ignore -->
+{% block content %}
+<form hx-post="{% url 'contact_form' %}" hx-swap="outerHTML">
+  <p class="subtitle pb-4">Get in touch!</p>
+  {% csrf_token %}
+  {{ form }}
+  <input class="btn mt-10" type="submit" value="Submit">
+</form>
+{% endblock content %}

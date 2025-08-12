@@ -6,7 +6,6 @@
 <!-- prettier-ignore -->
 {% block content %}
 <div class="hero bg-base-200 min-h-screen">
-  {% include 'base/alert.html' %}
   <div class="px-4 py-6 w-8/10">
     <div class="bg-sky-500/50 border-base-300 rounded-box border mx-auto p-10 w-6/10">
       <form hx-post="{% url 'contact_form' %}" hx-swap="outerHTML">
