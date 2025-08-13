@@ -16,17 +16,19 @@
     <body>
         {% include 'nav/navbar.html' %}
         {% block body %}
-        <div class="card bg-base-200 w-8/10 shadow-sm mt-45 ml-auto mr-auto">
-            <div class="card-body">
+        <div class="hero bg-base-200 w-8/10 shadow-sm mt-45 ml-auto mr-auto">
+            <div class="hero-content">
                 <div>
                     <div>
                         {% if messages %}
-                            <div>
-                                <strong>{% trans "Messages:" %}</strong>
-                                <ul>
-                                    {% for message in messages %}<li>{{ message }}</li>{% endfor %}
-                                </ul>
-                            </div>
+                        {% for message in messages %}
+                        <div role="alert" class="alert alert-info alert-soft">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-info h-6 w-6 shrink-0">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>{{ message }}</span>
+                        </div>
+                        {% endfor %}
                         {% endif %}
                         <div>
                             <ul class="menu menu-vertical mr-auto ml-auto lg:menu-horizontal bg-base-200 rounded-box">
@@ -68,7 +70,7 @@
                                         </li>
                                     {% endif %}
                                 {% else %}
-                                    {% url 'account_login' as login_url_ %}
+                                    <!-- {% url 'account_login' as login_url_ %}
                                     {% if login_url_ %}
                                         <li>
                                             <a href="{{ login_url_ }}">{% trans "Sign In" %}</a>
@@ -79,7 +81,7 @@
                                         <li>
                                             <a href="{{ signup_url_ }}">{% trans "Sign Up" %}</a>
                                         </li>
-                                    {% endif %}
+                                    {% endif %} -->
                                 {% endif %}
                             </ul>
                         </div>
